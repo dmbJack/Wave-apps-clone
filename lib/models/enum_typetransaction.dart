@@ -1,0 +1,1 @@
+enum TYPETRANSACTION { send, receive, withdrawal }
