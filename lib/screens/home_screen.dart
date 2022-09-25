@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:not_wave/models/enum_status_transaction.dart';
+import 'package:not_wave/data_repository/list_transaction.dart';
 import 'package:not_wave/models/enum_typetransaction.dart';
-import 'package:not_wave/models/person.dart';
-import 'package:not_wave/resources/id_generator.dart';
+import 'package:not_wave/screens/widgets/action_bulle_widget.dart';
 import 'package:not_wave/screens/widgets/operation_listile.dart';
 
 import '../models/transaction.dart';
@@ -17,110 +16,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool isHide = false;
-  final List<Transaction> listOperation = [
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.send,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.receive,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.receive,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 1033500),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.send,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.withdrawal,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.withdrawal,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.send,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.receive,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 1399100),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.receive,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.send,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.withdrawal,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-    Transaction(
-        status: TRANSACTIONSTATUS.completed,
-        id: getIdGenerate(10),
-        date: DateTime.now(),
-        typeTransaction: TYPETRANSACTION.withdrawal,
-        person:
-            Person(name: 'Doumbia', lastName: 'Moussa', number: '0152817370'),
-        amount: 100000),
-  ];
-
+  final List<Transaction> listTransaction = ListTransaction.transactions;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     int totalAmount = 0;
-    for (var transaction in listOperation) {
+    for (var transaction in listTransaction) {
       if (transaction.typeTransaction == TYPETRANSACTION.receive) {
         totalAmount += transaction.amount;
       } else if (transaction.typeTransaction == TYPETRANSACTION.send) {
@@ -205,48 +106,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.only(top: 30.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                CircleAvatar(
-                                  backgroundColor:
-                                      Color.fromRGBO(31, 75, 255, 0.3),
-                                  radius: 30,
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Color.fromRGBO(31, 75, 255, 1),
-                                    size: 45,
-                                  ),
-                                ),
-                                Text(
-                                  'Send',
-                                  style: TextStyle(fontWeight: FontWeight.w600),
-                                ),
-                              ],
+                          children: const [
+                            ActionBulle(
+                              label: 'Send',
+                              colorsBulle: Color.fromRGBO(31, 75, 255, 1),
+                              iconBulle: Icons.person,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 80,
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                CircleAvatar(
-                                  backgroundColor:
-                                      Color.fromRGBO(255, 233, 173, 1),
-                                  radius: 30,
-                                  child: Icon(
-                                    Icons.lightbulb,
-                                    color: Color.fromRGBO(255, 195, 31, 1),
-                                    size: 45,
-                                  ),
-                                ),
-                                Text('Bills',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w600))
-                              ],
+                            ActionBulle(
+                              label: 'Bills',
+                              colorsBulle: Color.fromRGBO(255, 195, 31, 1),
+                              iconBulle: Icons.lightbulb,
                             ),
                           ],
                         ),
@@ -267,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.white,
                   child: Wrap(
                     children: [
-                      ...List.from(listOperation)
+                      ...List.from(listTransaction)
                           .map((transaction) => OperationListile(
                                 transaction: transaction,
                               ))

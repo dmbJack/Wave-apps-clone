@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:not_wave/models/enum_typetransaction.dart';
 import 'package:not_wave/models/transaction.dart';
 import 'package:not_wave/screens/transaction_details_screen.dart';
