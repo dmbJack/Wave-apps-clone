@@ -7,5 +7,7 @@ class Person {
     required this.lastName,
     required this.number,
   });
-  
+  String getName() {
+    return '$name $lastName'.toUpperCase();
+  }
 }

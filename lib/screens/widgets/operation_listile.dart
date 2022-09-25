@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:not_wave/models/enum_typetransaction.dart';
 import 'package:not_wave/models/transaction.dart';
+import 'package:not_wave/screens/transaction_details_screen.dart';
 
 class OperationListile extends StatelessWidget {
   final Transaction transaction;
@@ -12,39 +13,48 @@ class OperationListile extends StatelessWidget {
     switch (transaction.typeTransaction) {
       case TYPETRANSACTION.send:
         return ListTile(
+          onTap: (() => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) =>
+                  TransactionDetailScreen(transaction: transaction)))),
           title: Text('Transfert to ${transaction.person!.name}'),
           subtitle: Text(
-            '${DateFormat('d MMMM y').format(transaction.date)} at ${DateFormat.jm().format(transaction.date)}',
+            transaction.getDateFormated(),
             style: const TextStyle(color: Colors.black54),
           ),
           trailing: Text(
-            '${transaction.amount}F',
+            transaction.getTransactionAmount(),
             style: const TextStyle(
                 color: Colors.blueAccent, fontWeight: FontWeight.w700),
           ),
         );
       case TYPETRANSACTION.receive:
         return ListTile(
+          onTap: (() => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) =>
+                  TransactionDetailScreen(transaction: transaction)))),
           title: Text('Receive from ${transaction.person!.name}'),
           subtitle: Text(
-            '${DateFormat('d MMMM y').format(transaction.date)} at ${DateFormat.jm().format(transaction.date)}',
+            transaction.getDateFormated(),
             style: const TextStyle(color: Colors.black54),
           ),
           trailing: Text(
-            '${transaction.amount}F',
+            transaction.getTransactionAmount(),
             style: const TextStyle(
                 color: Colors.blueAccent, fontWeight: FontWeight.w700),
           ),
         );
       case TYPETRANSACTION.withdrawal:
         return ListTile(
+          onTap: (() => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) =>
+                  TransactionDetailScreen(transaction: transaction)))),
           title: const Text('Withdrawal'),
           subtitle: Text(
-            '${DateFormat('d MMMM y').format(transaction.date)} at ${DateFormat.jm().format(transaction.date)}',
+            transaction.getDateFormated(),
             style: const TextStyle(color: Colors.black54),
           ),
           trailing: Text(
-            '-${transaction.amount}F',
+            transaction.getTransactionAmount(),
             style: const TextStyle(
                 color: Colors.blueAccent, fontWeight: FontWeight.w700),
           ),
