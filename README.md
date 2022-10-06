@@ -11,10 +11,8 @@
  - [ONBOARD IMAGE LINK](https://lottiefiles.com/110457-notes-document)
 ## Screenshots
 
-![FIRST SCREEN](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2Fphoto_2022-09-30_19-50-07.jpg?alt=media&token=7400b565-0de1-4f6d-b81a-df9ddf03ae04)
-![MAIN SCREEN](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2Fphoto_2022-09-30_19-49-48.jpg?alt=media&token=05bc17b0-5904-4d4c-aad4-9ab257eb5f6a)
-
-![READ A NOTE](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2Fphoto_2022-09-30_19-49-57.jpg?alt=media&token=c160ea97-ff8d-4035-b6a3-f89ec15aa3ac)
-![ADD A NOTE](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2Fphoto_2022-09-30_19-49-51.jpg?alt=media&token=b9ae6dd5-f653-44d6-9844-4e53de93a8f5)
-![SEARCH NOTE](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2Fphoto_2022-09-30_19-49-53.jpg?alt=media&token=cabd6455-dcce-4c27-a3b4-e28f84656c66)
-![REMOVE A NOTE](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2Fphoto_2022-09-30_19-50-03.jpg?alt=media&token=6a380238-241b-4b69-b21c-9bce51c7261f)
+![MAIN SCREEN](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2FScreenshot_1665046873.png?alt=media&token=608ff4ae-6a4b-4e11-a318-56ade2e5afd5)
+![TRANSACTION LIST](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2FScreenshot_1665046897.png?alt=media&token=969ebeb1-eff4-46bc-b204-93d3a9f36c8c)
+![RECEIPT TRANSACTION SEND](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2FScreenshot_1665046877.png?alt=media&token=c561dae2-39d1-4804-9267-16a39e8fff47)
+![RECEIPT TRANSACTION RECEIVE](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2FScreenshot_1665046882.png?alt=media&token=af94e8db-bafe-43eb-bc4d-2e18a04c4170)
+![RECEIPT WITHDRAWAL](https://firebasestorage.googleapis.com/v0/b/github-assets.appspot.com/o/not-wave-apps%2FScreenshot_1665046890.png?alt=media&token=cbb1888a-f855-4744-a450-f8d574c63b5c)
